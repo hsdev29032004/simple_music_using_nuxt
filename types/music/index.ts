@@ -12,4 +12,4 @@ export type TMusic = {
     premium: boolean
 }
 
-export type TListMusic = [TMusic]
+export type TListMusic = TMusic[]
