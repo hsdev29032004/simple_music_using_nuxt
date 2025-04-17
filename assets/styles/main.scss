@@ -1,0 +1,22 @@
+$spacing-values: 1 2 3 4 5 6 7 8 9 10;
+$directions: mt ml mr mb pt pl pb pr;
+
+@each $direction in $directions {
+  @for $i from 1 through 10 {
+    .#{$direction}-#{$i} {
+      @if $direction == "mt" or $direction == "mb" {
+        margin-top: $i * 0.25rem;
+        margin-bottom: $i * 0.25rem;
+      } @else if $direction == "ml" or $direction == "mr" {
+        margin-left: $i * 0.25rem;
+        margin-right: $i * 0.25rem;
+      } @else if $direction == "pt" or $direction == "pb" {
+        padding-top: $i * 0.25rem;
+        padding-bottom: $i * 0.25rem;
+      } @else if $direction == "pl" or $direction == "pr" {
+        padding-left: $i * 0.25rem;
+        padding-right: $i * 0.25rem;
+      }
+    }
+  }
+}
