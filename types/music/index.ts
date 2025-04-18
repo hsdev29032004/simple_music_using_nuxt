@@ -9,7 +9,12 @@ export type TMusic = {
         slug: string
     },
     otherSingersId: [string],
-    premium: boolean
+    premium: boolean,
+}
+
+export type TDetailMusic = TMusic & {
+    urlMp3: string,
+    lyrics: string
 }
 
 export type TListMusic = TMusic[]

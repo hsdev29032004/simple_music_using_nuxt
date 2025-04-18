@@ -83,18 +83,18 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { useRoute, useHead } from "#imports";
-import type { TMusic } from "@/types/music/index";
+import type { TDetailMusic } from "@/types/music/index";
 import type { TResponse } from "@/types/response";
 
 const route = useRoute();
-const music = ref<TMusic | null>(null);
+const music = ref<TDetailMusic | null>(null);
 
 const { data } = await useFetch(
   `https://music-backend-q8q6.onrender.com/api/music/${route.params.slug}`
 );
 
 // @ts-ignore
-const response: TResponse<TMusic> = data._rawValue;
+const response: TResponse<TDetailMusic> = data._rawValue;
 music.value = response.data;
 
 useHead({
